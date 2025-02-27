@@ -42,5 +42,25 @@ document.addEventListener('keydown', (e) => {
     rotatePiece();  // rotate (clockwise)
   }
 });
+function clearLines() {
+  let linesCleared = 0;
+  for (let r = board.length - 1; r >= 0; r--) {
+    if (board[r].every(cell => cell !== 0)) {
+      board.splice(r, 1);               // remove the filled row
+      board.unshift(Array(COLS).fill(0)); // add an empty row at top
+      linesCleared++;
+    }
+  }
+  if (linesCleared > 0) {
+    score += linesCleared;        // award 1 point per line
+    linesClearedTotal += linesCleared;
+    playSound('line-clear');      // play chime sound
+    updateScoreDisplay();
+    // Check level up
+    if (linesClearedTotal >= 10) {
+      levelUp();
+    }
+  }
+}
 
 

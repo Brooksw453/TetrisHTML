@@ -70,5 +70,10 @@ function levelUp() {
   updateLevelDisplay();
   // Optionally, play a level-up sound or visual effect
 }
+function playSound(name) {
+  if (name === 'line-clear') {
+    document.getElementById('line-clear-sound').play();
+  }
+}
 
 

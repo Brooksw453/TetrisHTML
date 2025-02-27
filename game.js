@@ -31,3 +31,16 @@ function gameLoop(timestamp) {
   requestAnimationFrame(gameLoop);
 }
 requestAnimationFrame(gameLoop);
+document.addEventListener('keydown', (e) => {
+  if (e.code === "ArrowLeft") {
+    movePiece(-1);  // move left
+  } else if (e.code === "ArrowRight") {
+    movePiece(1);   // move right
+  } else if (e.code === "ArrowDown") {
+    dropPiece();    // soft drop (move down faster)
+  } else if (e.code === "ArrowUp") {
+    rotatePiece();  // rotate (clockwise)
+  }
+});
+
+

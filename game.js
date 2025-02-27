@@ -1,3 +1,4 @@
+console.log("Game script loaded!");
 const COLS = 10, ROWS = 20;
 let board = Array.from({length: ROWS}, () => Array(COLS).fill(0));
 

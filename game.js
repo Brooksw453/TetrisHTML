@@ -75,5 +75,11 @@ function playSound(name) {
     document.getElementById('line-clear-sound').play();
   }
 }
+function updateScoreDisplay() {
+  document.getElementById('score').textContent = `Score: ${score}`;
+}
+function updateLevelDisplay() {
+  document.getElementById('level').textContent = `Level: ${level}`;
+}
 
 

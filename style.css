@@ -1,0 +1,26 @@
+body {
+  background: black url("stars-bg.png") repeat center center; /* space background */
+  color: #00FF00;  /* retro green text */
+  font-family: "Press Start 2P", monospace; /* pixel-style font */
+  margin: 0;
+  overflow: hidden;
+}
+#game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 320px;
+  margin: auto;
+}
+#game-board {
+  background-color: #111; /* dark background for game grid */
+  image-rendering: pixelated; /* ensure canvas pixels are crisp */
+}
+#info-panel {
+  text-align: center;
+  margin-top: 10px;
+}
+#score, #level {
+  font-size: 1.2em;
+  margin: 5px;
+}

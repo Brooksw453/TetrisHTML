@@ -81,5 +81,9 @@ function updateScoreDisplay() {
 function updateLevelDisplay() {
   document.getElementById('level').textContent = `Level: ${level}`;
 }
+document.getElementById('btn-left').addEventListener('touchstart', () => movePiece(-1));
+document.getElementById('btn-right').addEventListener('touchstart', () => movePiece(1));
+document.getElementById('btn-rotate').addEventListener('touchstart', () => rotatePiece());
+document.getElementById('btn-down').addEventListener('touchstart', () => dropPiece());
 
 

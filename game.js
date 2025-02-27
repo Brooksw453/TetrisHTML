@@ -17,3 +17,17 @@ const TETROMINOES = {
   Z: [ [7,7,0],
         [0,7,7] ]
 };
+let dropInterval = 1000; // initial drop speed (milliseconds per row)
+let lastDropTime = 0;
+
+function gameLoop(timestamp) {
+  if (!lastDropTime) lastDropTime = timestamp;
+  const delta = timestamp - lastDropTime;
+  if (delta > dropInterval) {
+    updateGameState();   // move piece down if possible
+    lastDropTime = timestamp;
+  }
+  renderGame();          // draw the current state (board + falling piece)
+  requestAnimationFrame(gameLoop);
+}
+requestAnimationFrame(gameLoop);

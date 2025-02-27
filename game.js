@@ -62,5 +62,13 @@ function clearLines() {
     }
   }
 }
+function levelUp() {
+  level++;
+  linesClearedTotal = 0;           // reset count towards next level
+  // Increase speed by making drop interval shorter (e.g., 20% faster)
+  dropInterval = Math.max(100, dropInterval * 0.8); 
+  updateLevelDisplay();
+  // Optionally, play a level-up sound or visual effect
+}
 
 
